@@ -13,8 +13,6 @@ plugin.tx_certifications {
 	}
 }
 
-page.includeCss = EXT:certifications/Resources/Public/Css/tx_certifications.css
-
 plugin.tx_certifications._CSS_DEFAULT_STYLE (
 .tx_certifications .tabs {
     margin: 0 0 0 8px;
