@@ -41,6 +41,13 @@ class Tx_Certifications_Domain_Model_Certificate extends Tx_Extbase_DomainObject
 	 */
 	protected $certificationDate;
 
+    /**
+     * expirationDate
+     *
+     * @var DateTime
+     */
+    protected $expirationDate;
+
 	/**
 	 * allowListing
 	 *
@@ -80,6 +87,25 @@ class Tx_Certifications_Domain_Model_Certificate extends Tx_Extbase_DomainObject
 	public function setCertificationDate($certificationDate) {
 		$this->certificationDate = $certificationDate;
 	}
+
+    /**
+     * Returns the expirationDate
+     *
+     * @return DateTime $expirationDate
+     */
+    public function getExpirationDate() {
+        return $this->expirationDate;
+    }
+
+    /**
+     * Sets the expirationDate
+     *
+     * @param DateTime $expirationDate
+     * @return void
+     */
+     public function setExpirationDate($expirationDate) {
+        $this->expirationDate = $expirationDate;
+     }
 
 	/**
 	 * Returns the allowListing

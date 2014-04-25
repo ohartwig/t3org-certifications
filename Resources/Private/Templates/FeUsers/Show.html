@@ -1,3 +1,4 @@
+{namspace cert = Tx_Certification_ViewHelpers}
 <f:layout name="Default" />
 
 This Template is responsible for displaying a single view for a domain object
@@ -28,7 +29,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                                 <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
                             </f:then>
                             <f:else>
-                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date>
+                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
                             </f:else>
                         </f:if>)
                     </li>

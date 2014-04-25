@@ -47,6 +47,14 @@ class Tx_Certifications_Controller_FeUsersController extends Tx_Extbase_MVC_Cont
      * @return void
      */
     public function listAction($sorting = NULL) {
+        if ($sorting == NULL || $sorting == 'asc') {
+            $sort = 'desc';
+            $sorto = 'asc';
+        } else {
+            $sort = 'asc';
+            $sorto = 'desc';
+        }
+
         //ASCII => A-Z
         if (is_null($sorting) || $sorting === 'asc') {
             for ($i = 65;  $i <= 90; $i++) {
@@ -57,7 +65,8 @@ class Tx_Certifications_Controller_FeUsersController extends Tx_Extbase_MVC_Cont
                 $feUserss[chr($i)] = $this->feUsersRepository->findByFirstLetterOfLastName(chr($i));
             }
         }
-
+        $this->view->assign('sort', $sort);
+        $this->view->assign('sorto', $sorto);
  		$this->view->assign('feUserss', $feUserss);
 	}
 
@@ -66,7 +75,18 @@ class Tx_Certifications_Controller_FeUsersController extends Tx_Extbase_MVC_Cont
      * @param string $sorting
      */
     public function listSortedAction($sortby = NULL, $sorting = NULL) {
+        if ($sorting == NULL || $sorting == 'asc') {
+            $sort = 'desc';
+            $sorto = 'asc';
+        } else {
+            $sort = 'asc';
+            $sorto = 'desc';
+        }
+
         $feUserss = $this->feUsersRepository->findBySortBy($sortby,$sorting);
+
+        $this->view->assign('sort', $sort);
+        $this->view->assign('sorto', $sorto);
         $this->view->assign('feUserss', $feUserss);
     }
 

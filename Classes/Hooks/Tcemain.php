@@ -54,6 +54,12 @@ class Tx_Certifications_Hooks_Tcemain {
             }
 
         }
+        if ($table === 'tx_certifications_domain_model_certificate') {
+            if ($incomingFieldArray['expiration_date'] == '') {
+                $certDate = $incomingFieldArray['certification_date'];
+                $incomingFieldArray['expiration_date'] = ($certDate + (3 * 31556926));
+            }
+        }
     }
 
     /**

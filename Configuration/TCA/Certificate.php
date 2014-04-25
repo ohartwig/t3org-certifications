@@ -6,10 +6,10 @@ if (!defined ('TYPO3_MODE')) {
 $TCA['tx_certifications_domain_model_certificate'] = array(
 	'ctrl' => $TCA['tx_certifications_domain_model_certificate']['ctrl'],
 	'interface' => array(
-		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, certification_date, allow_listing, expired, certificate_type',
+		'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, certification_date, expiration_date, allow_listing, expired, certificate_type',
 	),
 	'types' => array(
-		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, certification_date, allow_listing, expired, certificate_type,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
+		'1' => array('showitem' => 'sys_language_uid;;;;1-1-1, l10n_parent, l10n_diffsource, hidden;;1, certification_date, expiration_date, allow_listing, expired, certificate_type,--div--;LLL:EXT:cms/locallang_ttc.xml:tabs.access,starttime, endtime'),
 	),
 	'palettes' => array(
 		'1' => array('showitem' => ''),
@@ -104,6 +104,17 @@ $TCA['tx_certifications_domain_model_certificate'] = array(
 				'default' => time()
 			),
 		),
+        'expiration_date' => array(
+            'exclude' => 0,
+            'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_certificate.expiration_date',
+            'config' => array(
+                'type' => 'input',
+                'size' => 7,
+                'eval' => 'date',
+                'checkbox' => 1,
+                'default' => 0
+            )
+        ),
 		'allow_listing' => array(
 			'exclude' => 0,
 			'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_certificate.allow_listing',

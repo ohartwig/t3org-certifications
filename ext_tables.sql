@@ -22,6 +22,7 @@ CREATE TABLE tx_certifications_domain_model_certificate (
 	feusers int(11) unsigned DEFAULT '0' NOT NULL,
 
 	certification_date int(11) DEFAULT '0' NOT NULL,
+	expiration_date int(11) DEFAULT '0' NOT NULL,
 	allow_listing tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	expired tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	certificate_type int(11) unsigned DEFAULT '0',

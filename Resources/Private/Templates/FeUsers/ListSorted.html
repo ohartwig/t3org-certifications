@@ -1,3 +1,4 @@
+{namspace cert = Tx_Certification_ViewHelpers}
 <f:layout name="Default" />
 
 This Template is responsible for creating a table of domain objects.
@@ -19,9 +20,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <table>
             <thead>
             <tr>
-                <th><f:link.action action="list" arguments="{sorting : 'desc'}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
-                <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
-                <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
+                <th><f:link.action action="list" arguments="{sorting : sorto}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
+                <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
+                <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
             </tr>
             </thead>
             <f:for each="{feUserss}" as="feUsers">
@@ -38,7 +39,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
                                                 <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
                                             </f:then>
                                             <f:else>
-                                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date>
+                                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
                                             </f:else>
                                         </f:if>)
                                     </li>
