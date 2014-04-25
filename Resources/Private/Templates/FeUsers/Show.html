@@ -17,9 +17,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:flashMessages />
     <h1>{feUsers.firstName} {feUsers.lastName}</h1>
     <f:if condition="{feUsers.image}">
-        <div><cert:GrayImage src="uploads/pics/{feUsers.image}" width="200" alt="{feUsers.firstName} {feUsers.lastName}" />
+        <div><cert:GrayImage src="uploads/pics/{feUsers.image}" width="340" alt="{feUsers.firstName} {feUsers.lastName}" />
             <f:if condition="{feUsers.cert_reason}">
-                <span>{feUsers.certReason}</span>
+                <span>"{feUsers.certReason}" <span>{feUsers.firstName} {feUsers.lastName}</span></span>
             </f:if>
         </div>
     </f:if>
