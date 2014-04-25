@@ -1,3 +1,4 @@
+{namespace cert = Tx_Certifications_ViewHelpers}
 <f:layout name="Default" />
 
 This Template is responsible for displaying a single view for a domain object
@@ -16,7 +17,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:flashMessages />
     <h1>{feUsers.firstName} {feUsers.lastName}</h1>
     <f:if condition="{feUsers.image}">
-        <div>{feUsers.image -> f:cObject(typoscriptObjectPath: 'cert.transformImage')}
+        <div><cert:GrayImage src="uploads/pics/{feUsers.image}" width="200" alt="{feUsers.firstName} {feUsers.lastName}" />
             <f:if condition="{feUsers.cert_reason}">
                 <span>{feUsers.certReason</span>
             </f:if>

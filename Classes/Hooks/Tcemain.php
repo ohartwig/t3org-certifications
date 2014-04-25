@@ -49,7 +49,7 @@ class Tx_Certifications_Hooks_Tcemain {
                 $incomingFieldArray['password'] = $this->generateRandomString();
 
                 if ($incomingFieldArray['usergroup'] == '') {
-                    $incomingFieldArray['usergroup'] = 1;
+                    $incomingFieldArray['usergroup'] = 30;
                 }
             }
 
