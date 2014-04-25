@@ -1,0 +1,20 @@
+config.tx_extbase{
+    persistence{
+        classes{
+
+            Tx_Extbase_Domain_Model_FrontendUser {
+                subclasses {
+                    Tx_Certifications_FeUsers = Tx_Certifications_Domain_Model_FeUsers
+					
+          		}
+            }
+            Tx_Certifications_Domain_Model_FeUsers {
+                mapping {
+                    tableName = fe_users
+                    recordType = Tx_Certifications_FeUsers
+                }
+            }
+            
+    	}
+    }
+}

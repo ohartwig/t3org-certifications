@@ -1,0 +1,54 @@
+<f:layout name="Default" />
+
+This Template is responsible for creating a table of domain objects.
+
+If you modify this template, do not forget to change the overwrite settings
+in /Configuration/ExtensionBuilder/settings.yaml:
+  Resources:
+    Private:
+      Templates:
+        List.html: keep
+
+Otherwise your changes will be overwritten the next time you save the extension in the extension builder
+
+<f:section name="main">
+
+<f:flashMessages />
+
+    <div class="tx_certifications">
+        <table>
+            <thead>
+            <tr>
+                <th><f:link.action action="list" arguments="{sorting : 'desc'}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
+                <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
+                <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
+            </tr>
+            </thead>
+            <f:for each="{feUserss}" as="feUsers">
+                <tr>
+                    <td><f:link.action action="show" arguments="{feUsers : feUsers}">{feUsers.lastName}, {feUsers.firstName}</f:link.action></td>
+                    <td>{feUser.country}</td>
+                    <td>
+                        <ul>
+                            <f:for each="{feUsers.certificates}" as="certificate">
+                                <f:if condition="{0:certificate.allowListing} == {0:'1'}">
+                                    <li>{certificate.certificateType.title}
+                                        (<f:if condition="{certificate.expired}">
+                                            <f:then>
+                                                <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
+                                            </f:then>
+                                            <f:else>
+                                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date>
+                                            </f:else>
+                                        </f:if>)
+                                    </li>
+                                </f:if>
+                            </f:for>
+                        </ul>
+                    </td>
+                </tr>
+            </f:for>
+        </table>
+    </div>
+
+</f:section>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>module</type>
+		<description>Language labels for the Certifications extension in the FRONTEND</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_certifications_domain_model_feusers">FeUsers</label>
+			<label index="tx_certifications_domain_model_feusers.cert_reason">certReason</label>
+			<label index="tx_certifications_domain_model_feusers.public_email_address">publicEmailAddress</label>
+			<label index="tx_certifications_domain_model_feusers.certificates">certificates</label>
+			<label index="tx_certifications_domain_model_certificate">Certificate</label>
+			<label index="tx_certifications_domain_model_certificate.certification_date">certificationDate</label>
+			<label index="tx_certifications_domain_model_certificate.allow_listing">allowListing</label>
+			<label index="tx_certifications_domain_model_certificate.expired">expired</label>
+			<label index="tx_certifications_domain_model_certificate.certificate_type">certificateType</label>
+			<label index="tx_certifications_domain_model_certificatetype">CertificateType</label>
+			<label index="tx_certifications_domain_model_certificatetype.title">title</label>
+
+            <label index="tx_certifications_domain_model_feusers.name">Name</label>
+            <label index="tx_certifications_domain_model_feusers.country">Country</label>
+            <label index="tx_certifications_domain_model_feusers.certificate">Certificate</label>
+            <label index="tx_certifications_domain_model_feusers.no_expiration">no expiration</label>
+        </languageKey>
+	</data>
+</T3locallang>

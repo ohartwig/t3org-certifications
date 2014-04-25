@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'certifications'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+            
+			<label index="tx_certifications_domain_model_feusers">Certification</label>
+			<label index="tx_certifications_domain_model_feusers.cert_reason">Reason for Certification</label>
+			<label index="tx_certifications_domain_model_feusers.public_email_address">Allow public e-mail address</label>
+			<label index="tx_certifications_domain_model_feusers.certificates">Certificates</label>
+			<label index="fe_users.tx_extbase_type.Tx_Certifications_FeUsers">Certificated Users</label>
+
+            <label index="tx_certifications_domain_model_feusers.name">Name</label>
+            <label index="tx_certifications_domain_model_feusers.country">Country</label>
+            <label index="tx_certifications_domain_model_feusers.certificate">Certificate</label>
+            <label index="tx_certifications_domain_model_feusers.no_expiration">no expiration</label>
+			
+			<label index="tx_certifications_domain_model_certificate">Certificate</label>
+			<label index="tx_certifications_domain_model_certificate.certification_date">Certification Date</label>
+			<label index="tx_certifications_domain_model_certificate.allow_listing">Allow Listing</label>
+			<label index="tx_certifications_domain_model_certificate.expired">No expiration</label>
+			<label index="tx_certifications_domain_model_certificate.certificate_type">Certificate Type</label>
+
+			<label index="tx_certifications_domain_model_certificatetype">Certificate Type</label>
+			<label index="tx_certifications_domain_model_certificatetype.title">Title</label>
+
+		</languageKey>
+	</data>
+</T3locallang>

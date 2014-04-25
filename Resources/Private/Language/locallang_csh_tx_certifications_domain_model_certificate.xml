@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<description>Context Sensitive Help (CSH) for table tx_certifications_domain_model_certificate</description>
+		<type>CSH</type>
+		<csh_table>tx_certifications_domain_model_certificate</csh_table>
+	</meta>
+	<data type="array">
+	<languageKey index="default" type="array">
+	   
+			<label index="certification_date.description">certificationDate</label>
+			<label index="allow_listing.description">allowListing</label>
+			<label index="expired.description">expired</label>
+			<label index="certificate_type.description">certificateType</label>
+		</languageKey>
+	</data>
+</T3locallang>
