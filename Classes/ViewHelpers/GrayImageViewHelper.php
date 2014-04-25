@@ -135,8 +135,8 @@ class Tx_Certifications_ViewHelpers_GrayImageViewHelper extends Tx_Fluid_Core_Vi
         $imageInfo[3] = t3lib_div::png_to_gif_by_imagemagick($imageInfo[3]);
 
         //Convert to grey
-        $newFile = substr($imageInfo[3], 0, -4) . '.gif';
-        $cmd = t3lib_div::imageMagickCommand('convert', '"' . $imageInfo[3] . ' -colorspace gray" "' . $newFile . '"', $GLOBALS['TYPO3_CONF_VARS']['GFX']['im_path_lzw']);
+        $newFile = substr($imageInfo[3], 0, -4) . '.jpg';
+        $cmd = t3lib_div::imageMagickCommand('convert', '"' . $imageInfo[3] . ' -colorspace GRAY +matte " "' . $newFile . '"', $GLOBALS['TYPO3_CONF_VARS']['GFX']['im_path_lzw']);
         t3lib_utility_Command::exec($cmd);
         $imageInfo[3] = $newFile;
         if (@is_file($newFile)) {
