@@ -13,101 +13,79 @@ plugin.tx_certifications {
 	}
 }
 
+page.includeCss = EXT:certifications/Resources/Public/Css/tx_certifications.css
+
 plugin.tx_certifications._CSS_DEFAULT_STYLE (
-	textarea.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
+.tx_certifications .tabs {
+    margin: 0 0 0 8px;
+    overflow: hidden;
+    padding: 0;
+}
 
-	input.f3-form-error {
-		background-color:#FF9F9F;
-		border: 1px #FF0000 solid;
-	}
 
-	.tx-certifications table {
-		border-collapse:separate;
-		border-spacing:10px;
-	}
+.tx_certifications .tabs li {
+    background: none;
+    border-color: #C8C8C8;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    cursor: pointer;
+    float: left;
+    height: 29px;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    margin: 0;
+}
 
-	.tx-certifications table th {
-		font-weight:bold;
-	}
+.tx_certifications .tabs li:first-child {
+    border-width: 1px;
+}
 
-	.tx-certifications table td {
-		vertical-align:top;
-	}
-
-	.tx_certifications .tabs {
-        margin: 0 0 0 8px;
-        overflow: hidden;
-        padding: 0;
+.tx_certifications .tabs li a {
+    background: url("/typo3conf/ext/t3org_template/css/../i/s-buttons.png") repeat-x scroll 0 -64px rgba(0, 0, 0, 0);
+    border-left: 1px solid #fff;
+    color: #575757;
+    display: block;
+    font-size: 11px;
+    height: 29px;
+    line-height: 30px;
+    overflow: hidden;
+    text-decoration: none;
+    min-width: 8px;
+    padding: 0 4px;
     }
 
-
-    .tx_certifications .tabs li {
-        background: none;
-        border-color: #C8C8C8;
-        border-style: solid;
-        border-width: 1px 1px 1px 0;
-        cursor: pointer;
-        float: left;
-        height: 29px;
-        padding: 0;
-        text-align: center;
-        list-style: none;
-        margin: 0;
+.tx_certifications .panel {
+    border-top: 1px solid #C8C8C8;
+    margin-top: -1px;
     }
 
-    .tx_certifications .tabs li:first-child {
-        border-width: 1px;
+.tx_certifications .panel table {
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    width: 100%;
     }
 
-    .tx_certifications .tabs li a {
-        background: url("/typo3conf/ext/t3org_template/css/../i/s-buttons.png") repeat-x scroll 0 -64px rgba(0, 0, 0, 0);
-        border-left: 1px solid #fff;
-        color: #575757;
-        display: block;
-        font-size: 11px;
-        height: 29px;
-        line-height: 30px;
-        overflow: hidden;
-        text-decoration: none;
-        min-width: 8px;
-        padding: 0 4px;
-        }
+.tx_certifications .panel table th {
+    background: none;
+    border: none;
+    font-size: 11px;
+    padding: 17px 0 3px;
+    font-weight: bold;
+    text-align: left;
+    }
 
-    .tx_certifications .panel {
-        border-top: 1px solid #C8C8C8;
-        margin-top: -1px;
-        }
+.tx_certifications .panel table th a { color: #000; }
 
-    .tx_certifications .panel table {
-        border-collapse: collapse;
-        margin-bottom: 28px;
-        width: 100%;
-        }
+.tx_certifications .panel table td {
+    vertical-align: top;
+    background: none;
+    border-color: #dbdbdb;
+    border-style: solid;
+    border-width: 1px 0 0;
+    padding: 15px 0 13px;
+    }
 
-    .tx_certifications .panel table th {
-        background: none;
-        border: none;
-        font-size: 11px;
-        padding: 17px 0 3px;
-        font-weight: bold;
-        text-align: left;
-        }
-
-    .tx_certifications .panel table th a { color: #000; }
-
-    .tx_certifications .panel table td {
-        vertical-align: top;
-        background: none;
-        border-color: #dbdbdb;
-        border-style: solid;
-        border-width: 1px 0 0;
-        padding: 15px 0 13px;
-        }
-
-    .tx_certifications .panel table td h5 { font-weight: bold; }
-    .tx_certifications .panel table td h5 a { text-decoration: underline; }
-
+.tx_certifications .panel table td h5 { font-weight: bold; }
+.tx_certifications .panel table td h5 a { text-decoration: underline; }
 )
