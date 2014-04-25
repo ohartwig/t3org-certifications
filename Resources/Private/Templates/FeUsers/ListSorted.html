@@ -16,39 +16,41 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:flashMessages />
 
     <div class="tx_certifications">
-        <table>
-            <thead>
-            <tr>
-                <th><f:link.action action="list" arguments="{sorting : sorto}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
-                <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
-                <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
-            </tr>
-            </thead>
-            <f:for each="{feUserss}" as="feUsers">
+        <div class="panel">
+            <table>
+                <thead>
                 <tr>
-                    <td><f:link.action action="show" arguments="{feUsers : feUsers}">{feUsers.lastName}, {feUsers.firstName}</f:link.action></td>
-                    <td>{feUser.country}</td>
-                    <td>
-                        <ul>
-                            <f:for each="{feUsers.certificates}" as="certificate">
-                                <f:if condition="{0:certificate.allowListing} == {0:'1'}">
-                                    <li>{certificate.certificateType.title}
-                                        (<f:if condition="{certificate.expired}">
-                                            <f:then>
-                                                <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
-                                            </f:then>
-                                            <f:else>
-                                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
-                                            </f:else>
-                                        </f:if>)
-                                    </li>
-                                </f:if>
-                            </f:for>
-                        </ul>
-                    </td>
+                    <th><f:link.action action="list" arguments="{sorting : sorto}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
+                    <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
+                    <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : sort}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
                 </tr>
-            </f:for>
-        </table>
+                </thead>
+                <f:for each="{feUserss}" as="feUsers">
+                    <tr>
+                        <td><h5><f:link.action action="show" arguments="{feUsers : feUsers}">{feUsers.lastName}, {feUsers.firstName}</f:link.action></h5></td>
+                        <td>{feUser.country}</td>
+                        <td>
+                            <ul>
+                                <f:for each="{feUsers.certificates}" as="certificate">
+                                    <f:if condition="{0:certificate.allowListing} == {0:'1'}">
+                                        <li>{certificate.certificateType.title}
+                                            (<f:if condition="{certificate.expired}">
+                                                <f:then>
+                                                    <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
+                                                </f:then>
+                                                <f:else>
+                                                    <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
+                                                </f:else>
+                                            </f:if>)
+                                        </li>
+                                    </f:if>
+                                </f:for>
+                            </ul>
+                        </td>
+                    </tr>
+                </f:for>
+            </table>
+        </div>
     </div>
 
 </f:section>
