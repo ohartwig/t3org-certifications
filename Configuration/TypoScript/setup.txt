@@ -13,6 +13,15 @@ plugin.tx_certifications {
 	}
 }
 
+
+cert.transformImage = GIFBUILDER
+cert.transformImage {
+    file.current = 1
+    10 = IMAGE
+    10.file.import.current = 1
+    10.file.params= -type Grayscale
+}
+
 plugin.tx_certifications._CSS_DEFAULT_STYLE (
 	textarea.f3-form-error {
 		background-color:#FF9F9F;
