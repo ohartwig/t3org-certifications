@@ -118,13 +118,13 @@ plugin.tx_certifications._CSS_DEFAULT_STYLE (
     font-style: normal;
     }
 
-.tx-certifications .country, .tx-certifications .contact {
+.tx-certifications .country {
     clear: left;
+    float: left;
     margin-bottom: 20px;
     }
 
-.tx-certifications .certificates {
-    float: left;
+.tx-certifications .certificates, .tx-certifications .contact {
     clear: left;
     margin: 30px 0;
     }
