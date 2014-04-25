@@ -26,28 +26,21 @@ Otherwise your changes will be overwritten the next time you save the extension 
     </f:if>
 
     <div class="certificates">
-        <h3>My certificates</h3>
+        <h3><f:translate key="tx_certifications_domain_model_feusers.myCertificates" /></h3>
         <ul>
             <f:for each="{feUsers.certificates}" as="certificate">
                 <f:if condition="{0:certificate.allowListing} == {0:'1'}">
                     <li>{certificate.certificateType.title}
-                        (<f:if condition="{certificate.expired}">
-                            <f:then>
-                                <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
-                            </f:then>
-                            <f:else>
-                                <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
-                            </f:else>
-                        </f:if>)
+                        (<f:if condition="{certificate.expired}"><f:then><f:translate key="tx_certifications_domain_model_feusers.no_expiration" /></f:then><f:else><f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date></f:else></f:if>)
                     </li>
                 </f:if>
             </f:for>
         </ul>
     </div>
 
-    <f:if condition="{0:certificate.publicEmailAddress} == {0:'1'}">
+    <f:if condition="{0:feUsers.publicEmailAddress} == {0:'1'}">
         <div class="contact">
-            <h3>Contact me</h3>
+            <h3><f:translate key="tx_certifications_domain_model_feusers.contact" /></h3>
             <p><f:link.email email="{feUsers.email}" /></p>
         </div>
     </f:if>

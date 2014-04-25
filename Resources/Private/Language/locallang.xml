@@ -22,6 +22,8 @@
             <label index="tx_certifications_domain_model_feusers.country">Country</label>
             <label index="tx_certifications_domain_model_feusers.certificate">Certificate</label>
             <label index="tx_certifications_domain_model_feusers.no_expiration">no expiration</label>
+            <label index="tx_certifications_domain_model_feusers.myCertificates">My Certificates</label>
+            <label index="tx_certifications_domain_model_feusers.contact">Contact</label>
         </languageKey>
 	</data>
 </T3locallang>
