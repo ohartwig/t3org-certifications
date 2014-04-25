@@ -15,8 +15,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 
 <f:flashMessages />
-    <h1 class="csc-firstHeader">{feUsers.firstName} {feUsers.lastName}</h1>
-    <span class="country">{feUsers.country}</span>
+    <h1 class="csc-firstHeader head">{feUsers.firstName} {feUsers.lastName}</h1>
+
     <f:if condition="{feUsers.image}">
         <div class="user-image"><cert:GrayImage src="uploads/pics/{feUsers.image}" width="340m" alt="{feUsers.firstName} {feUsers.lastName}" />
             <f:if condition="{feUsers.certReason}">
@@ -24,6 +24,8 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </f:if>
         </div>
     </f:if>
+
+    <span class="country">{feUsers.country}</span>
 
     <div class="certificates">
         <h3><f:translate key="tx_certifications_domain_model_feusers.myCertificates" /></h3>
