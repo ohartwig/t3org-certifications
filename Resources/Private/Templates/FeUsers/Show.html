@@ -15,17 +15,18 @@ Otherwise your changes will be overwritten the next time you save the extension 
 <f:section name="main">
 
 <f:flashMessages />
-    <h1>{feUsers.firstName} {feUsers.lastName}</h1>
+    <h1 class="csc-firstHeader">{feUsers.firstName} {feUsers.lastName}</h1>
+    <span class="country">{feUsers.country}</span>
     <f:if condition="{feUsers.image}">
-        <div><cert:GrayImage src="uploads/pics/{feUsers.image}" width="340" alt="{feUsers.firstName} {feUsers.lastName}" />
-            <f:if condition="{feUsers.cert_reason}">
-                <span>"{feUsers.certReason}" <span>{feUsers.firstName} {feUsers.lastName}</span></span>
+        <div class="user-image"><cert:GrayImage src="uploads/pics/{feUsers.image}" width="340m" alt="{feUsers.firstName} {feUsers.lastName}" />
+            <f:if condition="{feUsers.certReason}">
+                <span class="reason">"{feUsers.certReason}" <span class="name">{feUsers.firstName} {feUsers.lastName}</span></span>
             </f:if>
         </div>
     </f:if>
-    <div>
-        {feUsers.country}
-        {feUsers.email}
+
+    <div class="certificates">
+        <h3>My certificates</h3>
         <ul>
             <f:for each="{feUsers.certificates}" as="certificate">
                 <f:if condition="{0:certificate.allowListing} == {0:'1'}">
@@ -43,4 +44,10 @@ Otherwise your changes will be overwritten the next time you save the extension 
             </f:for>
         </ul>
     </div>
+
+    <div class="contact">
+        <h3>Contact me</h3>
+        <p><f:link.email email="{feUsers.email}" /></p>
+    </div>
+
 </f:section>
