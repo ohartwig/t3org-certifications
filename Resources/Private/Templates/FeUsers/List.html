@@ -25,40 +25,42 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </ul>
         <div class="panel">
             <f:for each="{feUserss}" as="feUsers" key="label">
-                <h2 id="{label}">{label}</h2>
-                <table>
-                    <thead>
-                    <tr>
-                        <th><f:link.action action="list" arguments="{sorting : 'desc'}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
-                        <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
-                        <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
-                    </tr>
-                    </thead>
-                    <f:for each="{feUsers}" as="feUser">
+                <f:if condition="{feUsers}">
+                    <h2 id="{label}">{label}</h2>
+                    <table>
+                        <thead>
                         <tr>
-                            <td><h5><f:link.action action="show" arguments="{feUsers : feUser}">{feUser.lastName}, {feUser.firstName}</f:link.action></h5></td>
-                            <td>{feUser.country}</td>
-                            <td>
-                                <ul>
-                                    <f:for each="{feUser.certificates}" as="certificate">
-                                        <f:if condition="{0:certificate.allowListing} == {0:'1'}">
-                                            <li>{certificate.certificateType.title}
-                                                (<f:if condition="{certificate.expired}">
-                                                    <f:then>
-                                                        <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
-                                                    </f:then>
-                                                    <f:else>
-                                                        <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date>
-                                                    </f:else>
-                                                </f:if>)
-                                            </li>
-                                        </f:if>
-                                    </f:for>
-                                </ul>
-                            </td>
+                            <th><f:link.action action="list" arguments="{sorting : 'desc'}"><f:translate key="tx_certifications_domain_model_feusers.name" /></f:link.action></th>
+                            <th><f:link.action action="listSorted" arguments="{sortby : 'country', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.country" /></f:link.action></th>
+                            <th><f:link.action action="listSorted" arguments="{sortby : 'certificate', sorting : 'asc'}"><f:translate key="tx_certifications_domain_model_feusers.certificate" /></f:link.action></th>
                         </tr>
-                    </f:for>
-                </table>
+                        </thead>
+                        <f:for each="{feUsers}" as="feUser">
+                            <tr>
+                                <td><h5><f:link.action action="show" arguments="{feUsers : feUser}">{feUser.lastName}, {feUser.firstName}</f:link.action></h5></td>
+                                <td>{feUser.country}</td>
+                                <td>
+                                    <ul>
+                                        <f:for each="{feUser.certificates}" as="certificate">
+                                            <f:if condition="{0:certificate.allowListing} == {0:'1'}">
+                                                <li>{certificate.certificateType.title}
+                                                    (<f:if condition="{certificate.expired}">
+                                                        <f:then>
+                                                            <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
+                                                        </f:then>
+                                                        <f:else>
+                                                            <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date>
+                                                        </f:else>
+                                                    </f:if>)
+                                                </li>
+                                            </f:if>
+                                        </f:for>
+                                    </ul>
+                                </td>
+                            </tr>
+                        </f:for>
+                    </table>
+                </f:if>
             </f:for>
         </div>
     </div>
