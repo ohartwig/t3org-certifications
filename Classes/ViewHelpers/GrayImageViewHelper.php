@@ -133,8 +133,16 @@ class Tx_Certifications_ViewHelpers_GrayImageViewHelper extends Tx_Fluid_Core_Vi
             throw new Tx_Fluid_Core_ViewHelper_Exception('Could not get image resource for "' . htmlspecialchars($src) . '".' , 1253191060);
         }
         $imageInfo[3] = t3lib_div::png_to_gif_by_imagemagick($imageInfo[3]);
+
         //Convert to grey
-        $imageInfo[3] = t3lib_div::imageMagickCommand('convert', '"' . $imageInfo[3] . ' -channel RGBA -matte -colorspace gray" "' . substr($imageInfo[3], 0, -4) . '.gif' . '"', $GLOBALS['TYPO3_CONF_VARS']['GFX']['im_path']);
+        $newFile = substr($imageInfo[3], 0, -4) . '.gif';
+        $cmd = t3lib_div::imageMagickCommand('convert', '"' . $imageInfo[3] . ' -colorspace gray" "' . $newFile . '"', $GLOBALS['TYPO3_CONF_VARS']['GFX']['im_path_lzw']);
+        t3lib_utility_Command::exec($cmd);
+        $imageInfo[3] = $newFile;
+        if (@is_file($newFile)) {
+            t3lib_div::fixPermissions($newFile);
+        }
+
         $GLOBALS['TSFE']->imagesOnPage[] = $imageInfo[3];
 
         $imageSource = $GLOBALS['TSFE']->absRefPrefix . t3lib_div::rawUrlEncodeFP($imageInfo[3]);
