@@ -18,3 +18,11 @@ config.tx_extbase{
     	}
     }
 }
+
+cert.transformImage = GIFBUILDER
+cert.transformImage {
+    file.current = 1
+    10 = IMAGE
+    10.file.import.current = 1
+    10.file.params= -type Grayscale
+}
