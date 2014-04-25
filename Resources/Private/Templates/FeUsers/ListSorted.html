@@ -28,20 +28,13 @@ Otherwise your changes will be overwritten the next time you save the extension 
                 <f:for each="{feUserss}" as="feUsers">
                     <tr>
                         <td><h5><f:link.action action="show" arguments="{feUsers : feUsers}">{feUsers.lastName}, {feUsers.firstName}</f:link.action></h5></td>
-                        <td>{feUser.country}</td>
+                        <td>{feUsers.country}</td>
                         <td>
                             <ul>
                                 <f:for each="{feUsers.certificates}" as="certificate">
                                     <f:if condition="{0:certificate.allowListing} == {0:'1'}">
                                         <li>{certificate.certificateType.title}
-                                            (<f:if condition="{certificate.expired}">
-                                                <f:then>
-                                                    <f:translate key="tx_certifications_domain_model_feusers.no_expiration" />
-                                                </f:then>
-                                                <f:else>
-                                                    <f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date>
-                                                </f:else>
-                                            </f:if>)
+                                            (<f:if condition="{certificate.expired}"><f:then><f:translate key="tx_certifications_domain_model_feusers.no_expiration" /></f:then><f:else><f:format.date format="d.m.Y">{certificate.certificationDate}</f:format.date> - <f:format.date format="d.m.Y">{certificate.expirationDate}</f:format.date></f:else></f:if>)
                                         </li>
                                     </f:if>
                                 </f:for>
