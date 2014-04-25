@@ -45,9 +45,11 @@ Otherwise your changes will be overwritten the next time you save the extension 
         </ul>
     </div>
 
-    <div class="contact">
-        <h3>Contact me</h3>
-        <p><f:link.email email="{feUsers.email}" /></p>
-    </div>
+    <f:if condition="{0:certificate.publicEmailAddress} == {0:'1'}">
+        <div class="contact">
+            <h3>Contact me</h3>
+            <p><f:link.email email="{feUsers.email}" /></p>
+        </div>
+    </f:if>
 
 </f:section>
