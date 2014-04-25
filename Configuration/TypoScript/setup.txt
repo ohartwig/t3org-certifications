@@ -86,7 +86,7 @@ plugin.tx_certifications._CSS_DEFAULT_STYLE (
 .tx_certifications .panel table td h5 { font-weight: bold; }
 .tx_certifications .panel table td h5 a { text-decoration: underline; }
 
-.tx_certifications .head { float: left; }
+.tx-certifications .head { float: left; }
 
 .tx-certifications .user-image {
     float: right;
@@ -119,8 +119,8 @@ plugin.tx_certifications._CSS_DEFAULT_STYLE (
     }
 
 .tx-certifications .country, .tx-certifications .contact {
-    float: left;
     clear: left;
+    margin-bottom: 20px;
     }
 
 .tx-certifications .certificates {
