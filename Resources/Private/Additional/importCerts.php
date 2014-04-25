@@ -22,8 +22,15 @@ while( !feof($fp) ) {
     $query = substr($query, 0, -1);
     mysql_query($query);
 
+    $expirationDate = $zeile[4] + 3Years;
+    $certificationDate = $zeile[4];
+    if ($zeile[6] == 'Version 4.x') {
+        $expired = '1';
+    } else {
+        $expired = '0';
+    }
     $mmQuery = "INSERT INTO tx_certifications_domain_model_certificate (pid,feusers,certification_date,allow_listing,expired,certificate_type,expiration_date) VALUES";
-    $mmQuery .= " ('774','".mysql_insert_id()."','".$zeile[4]."', '1',EXPRITEIF,'1','".$zeile[4]."+3YEARS')";
+    $mmQuery .= " ('774','".mysql_insert_id()."','".$certificationDate."', '1',EXPRITEIF,'1','".$expirationDate."')";
     $mmQuery = substr($query, 0, -1);
     mysql_query($query);
 
