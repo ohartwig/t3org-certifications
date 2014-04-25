@@ -53,7 +53,7 @@ class Tx_Certifications_Domain_Model_Certificate extends Tx_Extbase_DomainObject
 	 *
 	 * @var boolean
 	 */
-	protected $allowListing = FALSE;
+	protected $allowListing = TRUE;
 
 	/**
 	 * expired

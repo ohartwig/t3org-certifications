@@ -6,6 +6,8 @@ CREATE TABLE fe_users (
 	cert_reason varchar(255) DEFAULT '' NOT NULL,
 	public_email_address tinyint(1) unsigned DEFAULT '0' NOT NULL,
 	certificates int(11) unsigned DEFAULT '0' NOT NULL,
+	twitter varchar(255) DEFAULT '' NOT NULL,
+	public_twitter tinyint(1) unsigned DEFAULT '0' NOT NULL,
 
 	tx_extbase_type varchar(255) DEFAULT '' NOT NULL,
 

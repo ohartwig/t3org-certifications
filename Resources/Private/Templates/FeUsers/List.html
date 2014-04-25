@@ -37,7 +37,14 @@ Otherwise your changes will be overwritten the next time you save the extension 
                         </thead>
                         <f:for each="{feUsers}" as="feUser">
                             <tr>
-                                <td><h5><f:link.action action="show" arguments="{feUsers : feUser}">{feUser.lastName}, {feUser.firstName}</f:link.action></h5></td>
+                                <f:if condition="{settings.singlePid}">
+                                    <f:then>
+                                        <td><h5><f:link.action action="show" pageUid="{settings.singlePid}" arguments="{feUsers : feUser}">{feUser.lastName}, {feUser.firstName}</f:link.action></h5></td>
+                                    </f:then>
+                                    <f:else>
+                                        <td><h5><f:link.action action="show" arguments="{feUsers : feUser}">{feUser.lastName}, {feUser.firstName}</f:link.action></h5></td>
+                                    </f:else>
+                                </f:if>
                                 <td>{feUser.country}</td>
                                 <td>
                                     <ul>

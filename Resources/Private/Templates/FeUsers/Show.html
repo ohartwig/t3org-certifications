@@ -44,6 +44,9 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="contact">
             <h3><f:translate key="tx_certifications_domain_model_feusers.contact" /></h3>
             <p><f:link.email email="{feUsers.email}" /></p>
+            <f:if condition="{feUsers.twitter}">
+                <p><f:link.external uri="https://www.twitter.com/{feUsers.twitter}" target="_blank">@{feUsers.twitter}</f:link.external></p>
+            </f:if>
         </div>
     </f:if>
 

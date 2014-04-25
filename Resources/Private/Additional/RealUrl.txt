@@ -1,0 +1,58 @@
+$GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl']=array (
+  '_DEFAULT' =>
+  array (
+    'postVarSets' => array (
+      '_DEFAULT' => array (
+          'certificates' => array(
+              array(
+                'GETvar' => 'tx_certifications_certlist[action]',
+                  'valueMap' => array(
+                    'list' => 'list',
+                    'listSorted' => 'listSorted',
+                    'show' => 'show'
+                  ),
+                 'noMatch' => 'bypass'
+              ),
+              array(
+                'GETvar' => 'tx_certifications_certlist[controller]',
+                  'valueMap' => array(
+                    'FeUsers' => 'FeUsers'
+                  ),
+                  'noMatch' => 'bypass'
+              ),
+              array(
+                'GETvar' => 'tx_certifications_certlist[sortby]',
+                  'valueMap' => array(
+                      'country' => 'country',
+                      'certificate' => 'certificate'
+                  ),
+                  'noMatch' => 'bypass'
+              ),
+              array(
+                'GETvar' => 'tx_certifications_certlist[sorting]',
+                  'valueMap' => array(
+                      'asc' => 'asc',
+                      'desc' => 'desc'
+                  ),
+                  'noMatch' => 'bypass'
+              ),
+              array(
+                  'GETvar' => 'tx_certifications_certlist[feUsers]',
+                  'lookUpTable' => array (
+                      'table' => 'fe_users',
+                      'id_field' => 'uid',
+                      'alias_field' => 'name',
+                      'addWhereClause' => ' AND NOT deleted AND NOT disable',
+                      'useUniqueCache' => 1,
+                      'useUniqueCache_conf' => array (
+                          'strtolower' => 1,
+                          'spaceCharacter' => '-',
+                      ),
+                  ),
+              )
+          )
+      ),
+    ),
+  ),
+);
+

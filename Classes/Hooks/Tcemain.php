@@ -45,6 +45,11 @@ class Tx_Certifications_Hooks_Tcemain {
                 //'generate' Username
                 $incomingFieldArray['username'] = '#'.$incomingFieldArray['first_name'].'.'.$incomingFieldArray['last_name'];
 
+                //Set 'name'
+                if ($incomingFieldArray['name'] == '') {
+                    $incomingFieldArray['name'] = $incomingFieldArray['first_name'].' '.$incomingFieldArray['last_name'];
+                }
+
                 //generate randome password
                 $incomingFieldArray['password'] = $this->generateRandomString();
 
@@ -55,7 +60,7 @@ class Tx_Certifications_Hooks_Tcemain {
 
         }
         if ($table === 'tx_certifications_domain_model_certificate') {
-            if ($incomingFieldArray['expiration_date'] == '') {
+            if ($incomingFieldArray['expiration_date'] == '' && $incomingFieldArray['expired'] === '0') {
                 $certDate = $incomingFieldArray['certification_date'];
                 $incomingFieldArray['expiration_date'] = ($certDate + (3 * 31556926));
             }

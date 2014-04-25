@@ -11,6 +11,10 @@ Tx_Extbase_Utility_Extension::registerPlugin(
 
 t3lib_extMgm::addStaticFile($_EXTKEY, 'Configuration/TypoScript', 'Certifications');
 
+$TCA['tt_content']['types']['list']['subtypes_addlist']['certifications_certlist'] ='pi_flexform';
+
+t3lib_extMgm::addPiFlexFormValue('certifications_certlist', 'FILE:EXT:'.$_EXTKEY . '/Configuration/FlexForms/Certlist.xml');
+
 t3lib_div::loadTCA('fe_users');
 if (!isset($TCA['fe_users']['ctrl']['type'])) {
 	// no type field defined, so we define it here. This will only happen the first time the extension is installed!!

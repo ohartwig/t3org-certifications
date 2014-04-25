@@ -55,6 +55,20 @@ class Tx_Certifications_Domain_Model_FeUsers extends Tx_Extbase_Domain_Model_Fro
 	 */
 	protected $certificates;
 
+    /**
+     * twitter
+     *
+     * @var string
+     */
+    protected $twitter;
+
+    /**
+     * publicTwitter
+     *
+     * @var boolean
+     */
+    protected $publicTwitter;
+
 	/**
 	 * __construct
 	 *

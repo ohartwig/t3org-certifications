@@ -120,7 +120,7 @@ $TCA['tx_certifications_domain_model_certificate'] = array(
 			'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_certificate.allow_listing',
 			'config' => array(
 				'type' => 'check',
-				'default' => 0
+				'default' => 1
 			),
 		),
 		'expired' => array(
