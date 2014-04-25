@@ -14,6 +14,8 @@ plugin.tx_certifications {
 }
 
 plugin.tx_certifications._CSS_DEFAULT_STYLE (
+.tx_certifications { overflow: hidden; }
+
 .tx_certifications .tabs {
     margin: 0 0 0 8px;
     overflow: hidden;
@@ -90,6 +92,7 @@ plugin.tx_certifications._CSS_DEFAULT_STYLE (
     float: right;
     width: 340px;
     position: relative;
+    margin-left: 20px;
     }
 .tx-certifications .reason {
     position: absolute;
