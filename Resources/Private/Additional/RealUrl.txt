@@ -3,21 +3,17 @@ $GLOBALS['TYPO3_CONF_VARS']['EXTCONF']['realurl']=array (
   array (
     'postVarSets' => array (
       '_DEFAULT' => array (
-          'certificates' => array(
+          'certification' => array(
               array(
                 'GETvar' => 'tx_certifications_certlist[action]',
                   'valueMap' => array(
                     'list' => 'list',
-                    'listSorted' => 'listSorted',
-                    'show' => 'show'
+                    'sorted-list' => 'listSorted',
                   ),
                  'noMatch' => 'bypass'
               ),
               array(
                 'GETvar' => 'tx_certifications_certlist[controller]',
-                  'valueMap' => array(
-                    'FeUsers' => 'FeUsers'
-                  ),
                   'noMatch' => 'bypass'
               ),
               array(

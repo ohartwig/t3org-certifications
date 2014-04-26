@@ -26,7 +26,6 @@ Otherwise your changes will be overwritten the next time you save the extension 
     </f:if>
 
     <span class="country">{feUsers.country}</span>
-
     <div class="certificates">
         <h3><f:translate key="tx_certifications_domain_model_feusers.myCertificates" /></h3>
         <ul>
@@ -44,7 +43,7 @@ Otherwise your changes will be overwritten the next time you save the extension 
         <div class="contact">
             <h3><f:translate key="tx_certifications_domain_model_feusers.contact" /></h3>
             <p><f:link.email email="{feUsers.email}" /></p>
-            <f:if condition="{feUsers.twitter}">
+            <f:if condition="{0:feUsers.publicTwitter} == {0:'1'}">
                 <p><f:link.external uri="https://www.twitter.com/{feUsers.twitter}" target="_blank">@{feUsers.twitter}</f:link.external></p>
             </f:if>
         </div>

@@ -58,6 +58,24 @@ $tmp_certifications_columns = array(
 			'default' => 0
 		),
 	),
+    'twitter' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_feusers.twitter',
+        'config' => array(
+            'type' => 'input',
+            'size' => 20,
+            'max' => 15,
+            'eval' => 'trim'
+        )
+    ),
+    'public_twitter' => array(
+        'exclude' => 0,
+        'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_feusers.public_twitter',
+		'config' => array(
+            'type' => 'check',
+            'default' => 0
+        ),
+    ),
 	'certificates' => array(
 		'exclude' => 0,
 		'label' => 'LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_feusers.certificates',
@@ -84,7 +102,7 @@ $TCA['fe_users']['columns'][$TCA['fe_users']['ctrl']['type']]['config']['items']
 
 $TCA['fe_users']['types']['Tx_Certifications_FeUsers']['showitem'] = $TCA['fe_users']['types']['Tx_Extbase_Domain_Model_FrontendUser']['showitem'];
 $TCA['fe_users']['types']['Tx_Certifications_FeUsers']['showitem'] .= ',--div--;LLL:EXT:certifications/Resources/Private/Language/locallang_db.xml:tx_certifications_domain_model_feusers,';
-$TCA['fe_users']['types']['Tx_Certifications_FeUsers']['showitem'] .= 'cert_reason, public_email_address, certificates';
+$TCA['fe_users']['types']['Tx_Certifications_FeUsers']['showitem'] .= 'cert_reason, public_email_address, twitter, public_twitter, certificates';
 
 t3lib_extMgm::addLLrefForTCAdescr('tx_certifications_domain_model_certificate', 'EXT:certifications/Resources/Private/Language/locallang_csh_tx_certifications_domain_model_certificate.xml');
 t3lib_extMgm::allowTableOnStandardPages('tx_certifications_domain_model_certificate');

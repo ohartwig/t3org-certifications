@@ -13,15 +13,22 @@ Otherwise your changes will be overwritten the next time you save the extension 
 
 <f:section name="main">
 
-<f:flashMessages />
-
     <div class="tx_certifications">
         <ul class="tabs">
-        <f:for each="{0:'A',1:'B',2:'C',3:'D',4:'E',5:'F',6:'G',7:'H',8:'I',9:'J',10:'K',11:'L',12:'M',13:'N',14:'O',15:'P',16:'Q',17:'R',18:'S',19:'T',20:'U',21:'V',22:'W',23:'X',24:'Y',25:'Z' }" as="letter">
-            <li>
-                <f:link.page pageUid="#{letter}">{letter}</f:link.page>
-            </li>
-        </f:for>
+            <f:for each="{feUserss}" as="feUsers" key="label">
+                <f:if condition="{feUsers}">
+                    <f:then>
+                        <li>
+                            <f:link.page pageUid="#{label}">{label}</f:link.page>
+                        </li>
+                    </f:then>
+                    <f:else>
+                        <li class="inactive">
+                            <f:link.page pageUid="#{label}">{label}</f:link.page>
+                        </li>
+                    </f:else>
+                </f:if>
+            </f:for>
         </ul>
         <div class="panel">
             <f:for each="{feUserss}" as="feUsers" key="label">
